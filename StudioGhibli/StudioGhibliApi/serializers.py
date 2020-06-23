@@ -6,4 +6,4 @@ class LocateSerializer(serializers.ModelSerializer):
     """Сериализация пользователя"""
     class Meta:
         model = Locate
-        fields = ("title", "director", "produser")
+        fields = ('id_category', 'ru_locate', 'us_locate')

@@ -1,12 +1,18 @@
 from django.contrib import admin
 
 # Register your models here.
-from StudioGhibliApi.models import Locate
+from .models import Category, Locate
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    """Предстваление category"""
+    list_display = ('category',)
 
 
 class LocateAdmin(admin.ModelAdmin):
-    """Комната чата"""
-    list_display = ("title", "director", "produser")
+    """Представление locate"""
+    list_display = ('id_category', 'ru_locate', 'us_locate')
 
 
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Locate, LocateAdmin)
