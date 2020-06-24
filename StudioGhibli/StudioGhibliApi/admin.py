@@ -11,7 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class LocateAdmin(admin.ModelAdmin):
     """Представление locate"""
-    list_display = ('id_category', 'ru_locate', 'us_locate')
+    list_display = ('ru_locate', 'us_locate', 'id_category')
 
 
 admin.site.register(Category, CategoryAdmin)

@@ -12,9 +12,9 @@ class Category(models.Model):
 
 class Locate(models.Model):
     """Location Model"""
-    id_category = models.ForeignKey(Category, on_delete=models.CASCADE)
     ru_locate = models.CharField(max_length=50)
     us_locate = models.CharField(max_length=50)
+    id_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "locate"

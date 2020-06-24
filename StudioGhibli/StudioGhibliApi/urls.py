@@ -3,5 +3,7 @@ from StudioGhibliApi.views import *
 
 
 urlpatterns = [
-    path('list/', ListGhibli.as_view()),
+    path('list/ru', ListGhibli.as_view({'get': 'list'})),
+    # path('list/ru', ListGhibli.as_view({'get': 'list'})),
+    # path('list/us', ListGhibli.as_view()),
 ]
