@@ -14,7 +14,7 @@ class Locate(models.Model):
     """Location Model"""
     ru_locate = models.CharField(max_length=50)
     us_locate = models.CharField(max_length=50)
-    id_category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "locate"
