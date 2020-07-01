@@ -1,14 +1,16 @@
 from rest_framework.response import Response
+from rest_framework import status
 from StudioGhibliApi.models import Locate, Category
 from rest_framework import viewsets
 from StudioGhibliApi.serializers import LocateSerializer
+from StudioGhibliApi.exceptions import NotFound
 import requests
 
 
 class ListGhibli(viewsets.ViewSet):
     """Основной класс предстваления"""
 
-    type = [  # категории
+    type = [  # категории которые переводим
         'title',
         'director',
         'producer'
@@ -35,4 +37,6 @@ class ListGhibli(viewsets.ViewSet):
         """Предоставление информации"""
         if lang == 'us':
             return Response(self.get_api())
-        return Response(self.replacement(self.type))
+        elif lang == 'ru':
+            return Response(self.replacement(self.type))
+        raise NotFound()
